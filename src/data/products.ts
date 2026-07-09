@@ -22,10 +22,10 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "01",
-    slug: "noor-e-shaam",
-    name: "Noor-e-Shaam",
+    slug: "midnight-blue",
+    name: "Midnight Blue",
     tagline: "An Evening Reverie",
-    price: 4500,
+    price: 3500,
     currency: "PKR",
     scentFamily: "Oriental Amber",
     notes: {
@@ -35,7 +35,7 @@ export const products: Product[] = [
     },
     images: ["/images/perfume1-1.png", "/images/perfume1-2.png"],
     description:
-      "Noor-e-Shaam captures the magic of dusk — that luminous moment when the sky glows amber and the first stars appear. A rich, warm blend of saffron and oud, softened by rose and wrapped in a base of creamy sandalwood and amber. This is a fragrance for evenings that linger, for conversations that matter, for the quiet confidence of twilight.",
+      "Midnight Blue captures the magic of dusk — that luminous moment when the sky glows amber and the first stars appear. A rich, warm blend of saffron and oud, softened by rose and wrapped in a base of creamy sandalwood and amber. This is a fragrance for evenings that linger, for conversations that matter, for the quiet confidence of twilight.",
     ingredients:
       "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Linalool, Coumarin, Citronellol, Geraniol, Eugenol, Alpha-Isomethyl Ionone, Benzyl Benzoate.",
     longevity: "8–12 hours. Moderate to heavy sillage. Best worn in autumn and winter evenings.",
@@ -44,10 +44,10 @@ export const products: Product[] = [
   },
   {
     id: "02",
-    slug: "gulab-e-noor",
-    name: "Gulab-e-Noor",
+    slug: "pink-passion",
+    name: "Pink Passion",
     tagline: "A Garden at Dawn",
-    price: 4000,
+    price: 3500,
     currency: "PKR",
     scentFamily: "Floral",
     notes: {
@@ -57,7 +57,7 @@ export const products: Product[] = [
     },
     images: ["/images/perfume2-1.png", "/images/perfume2-2.png"],
     description:
-      "Gulab-e-Noor is the scent of a rose garden kissed by the first light of morning. Delicate yet present, it opens with fresh peony and lychee, blooms into the heart of Damask rose and peach blossom, and settles into a whisper of white musk and cedarwood. A fragrance for the woman who carries grace like a second skin.",
+      "Pink Passion is the scent of a rose garden kissed by the first light of morning. Delicate yet present, it opens with fresh peony and lychee, blooms into the heart of Damask rose and peach blossom, and settles into a whisper of white musk and cedarwood. A fragrance for the woman who carries grace like a second skin.",
     ingredients:
       "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Linalool, Citronellol, Geraniol, Hydroxycitronellal, Benzyl Salicylate, Limonene.",
     longevity: "6–10 hours. Light to moderate sillage. Perfect for spring and summer days.",

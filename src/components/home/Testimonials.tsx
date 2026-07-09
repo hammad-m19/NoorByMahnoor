@@ -9,14 +9,14 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Noor-e-Shaam is unlike anything I've worn before. It's warm, complex, and absolutely captivating. I receive compliments every time.",
+      "Midnight Blue is unlike anything I've worn before. It's warm, complex, and absolutely captivating. I receive compliments every time.",
     name: "Ayesha K.",
     location: "Lahore",
   },
   {
     id: 2,
     quote:
-      "Gulab-e-Noor is my signature scent now. It's delicate without being faint — the rose lasts beautifully all day. A true gem.",
+      "Pink Passion is my signature scent now. It's delicate without being faint — the rose lasts beautifully all day. A true gem.",
     name: "Fatima S.",
     location: "Islamabad",
   },
