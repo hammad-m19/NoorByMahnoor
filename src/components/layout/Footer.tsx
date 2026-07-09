@@ -145,7 +145,7 @@ export default function Footer() {
                 color: "rgba(246, 238, 226, 0.6)",
               }}
             >
-              hello@noorbymahnoor.com
+              noorbymahnoor.pk@gmail.com
             </p>
           </div>
         </div>

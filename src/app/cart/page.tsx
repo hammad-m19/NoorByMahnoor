@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useCart } from "@/context/CartContext";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice, getShippingCost } from "@/lib/utils";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionDivider from "@/components/ui/SectionDivider";
 
@@ -252,10 +252,15 @@ export default function CartPage() {
                       <div className="flex justify-between text-sm" style={{ fontFamily: "var(--font-sans)" }}>
                         <span style={{ color: "var(--color-text-secondary)" }}>Shipping</span>
                         <span
-                          className="text-xs italic"
-                          style={{ color: "var(--color-text-secondary)" }}
+                          className="text-xs"
+                          style={{
+                            color: getShippingCost(subtotal) === 0
+                              ? "var(--color-accent-forest)"
+                              : "var(--color-text-secondary)",
+                            fontWeight: getShippingCost(subtotal) === 0 ? 500 : 400,
+                          }}
                         >
-                          Calculated at checkout
+                          {getShippingCost(subtotal) === 0 ? "FREE" : formatPrice(getShippingCost(subtotal))}
                         </span>
                       </div>
                     </div>
@@ -273,16 +278,18 @@ export default function CartPage() {
                       <span
                         className="heading-serif text-xl gold-text"
                       >
-                        {formatPrice(subtotal)}
+                        {formatPrice(subtotal + getShippingCost(subtotal))}
                       </span>
                     </div>
 
-                    <motion.button
-                      className="btn-primary w-full text-center"
-                      whileTap={{ scale: 0.97 }}
-                    >
-                      Proceed to Checkout
-                    </motion.button>
+                    <Link href="/checkout">
+                      <motion.div
+                        className="btn-primary w-full text-center"
+                        whileTap={{ scale: 0.97 }}
+                      >
+                        Proceed to Checkout
+                      </motion.div>
+                    </Link>
 
                     <p
                       className="text-xs text-center mt-4"

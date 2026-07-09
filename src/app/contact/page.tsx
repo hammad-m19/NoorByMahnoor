@@ -260,14 +260,14 @@ export default function ContactPage() {
                     Email
                   </h3>
                   <a
-                    href="mailto:hello@noorbymahnoor.com"
+                    href="mailto:noorbymahnoor.pk@gmail.com"
                     className="text-base transition-opacity hover:opacity-70"
                     style={{
                       color: "var(--color-text-primary)",
                       fontFamily: "var(--font-sans)",
                     }}
                   >
-                    hello@noorbymahnoor.com
+                    noorbymahnoor.pk@gmail.com
                   </a>
                 </div>
 
