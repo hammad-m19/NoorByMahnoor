@@ -279,10 +279,15 @@ export default function ContactPage() {
                     Follow Us
                   </h3>
                   <div className="flex flex-col gap-2">
-                    {["Instagram", "Facebook", "TikTok"].map((platform) => (
+                    {[
+                      { name: "Instagram", url: "https://www.instagram.com/noorbymahnoorpk/" },
+                      { name: "Facebook", url: "https://web.facebook.com/profile.php?id=61591638716076" }
+                    ].map((platform) => (
                       <a
-                        key={platform}
-                        href="#"
+                        key={platform.name}
+                        href={platform.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-base transition-opacity hover:opacity-70 flex items-center gap-2"
                         style={{
                           color: "var(--color-text-primary)",
@@ -290,7 +295,7 @@ export default function ContactPage() {
                         }}
                       >
                         <span className="w-1 h-1 rounded-full" style={{ background: "var(--color-gold)" }} />
-                        {platform}
+                        {platform.name}
                       </a>
                     ))}
                   </div>

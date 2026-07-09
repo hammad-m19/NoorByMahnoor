@@ -12,7 +12,7 @@ const footerLinks = [
 const socialLinks = [
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/noorbymahnoorpk/",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -23,19 +23,10 @@ const socialLinks = [
   },
   {
     label: "Facebook",
-    href: "https://facebook.com",
+    href: "https://web.facebook.com/profile.php?id=61591638716076",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-      </svg>
-    ),
-  },
-  {
-    label: "TikTok",
-    href: "https://tiktok.com",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" />
       </svg>
     ),
   },
