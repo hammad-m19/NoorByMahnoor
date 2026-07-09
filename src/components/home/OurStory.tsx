@@ -1,5 +1,4 @@
-"use client";
-
+import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionDivider from "@/components/ui/SectionDivider";
 
@@ -55,78 +54,30 @@ export default function OurStory() {
           </div>
         </ScrollReveal>
 
-        {/* Botanical Line Art */}
+        {/* Story Image */}
         <ScrollReveal delay={0.2} direction="right">
           <div className="flex items-center justify-center">
-            <svg
-              width="280"
-              height="380"
-              viewBox="0 0 280 380"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="opacity-30"
-              aria-hidden="true"
+            <div 
+              className="relative w-full max-w-[360px] aspect-[600/1024] overflow-hidden shadow-2xl border"
+              style={{ 
+                borderColor: "rgba(200, 166, 107, 0.15)",
+                borderRadius: "var(--radius-lg)"
+              }}
             >
-              {/* Crescent moon */}
-              <path
-                d="M140 40C165 40 185 60 185 85C185 110 165 130 140 130C155 130 170 115 170 85C170 55 155 40 140 40Z"
-                stroke="#A9793C"
-                strokeWidth="1"
-                fill="none"
+              <Image
+                src="/images/combo.jpeg"
+                alt="Noor by Mahnoor Perfume Collection"
+                fill
+                sizes="(max-width: 768px) 100vw, 360px"
+                className="object-cover transition-transform duration-700 hover:scale-105"
               />
-              {/* Main stem */}
-              <path
-                d="M140 130L140 340"
-                stroke="#A9793C"
-                strokeWidth="0.8"
+              <div 
+                className="absolute inset-0 pointer-events-none" 
+                style={{ 
+                  boxShadow: "inset 0 0 40px rgba(0,0,0,0.1)"
+                }}
               />
-              {/* Left leaves */}
-              <path
-                d="M140 180C120 160 90 165 85 180C80 195 100 210 140 200"
-                stroke="#A9793C"
-                strokeWidth="0.8"
-                fill="none"
-              />
-              <path
-                d="M140 230C115 215 80 225 78 245C76 265 110 270 140 255"
-                stroke="#A9793C"
-                strokeWidth="0.8"
-                fill="none"
-              />
-              {/* Right leaves */}
-              <path
-                d="M140 200C160 185 190 190 193 205C196 220 175 230 140 225"
-                stroke="#A9793C"
-                strokeWidth="0.8"
-                fill="none"
-              />
-              <path
-                d="M140 270C165 255 195 260 198 278C201 296 170 305 140 290"
-                stroke="#A9793C"
-                strokeWidth="0.8"
-                fill="none"
-              />
-              {/* Small leaf sprigs */}
-              <path
-                d="M140 155C128 148 118 152 116 160"
-                stroke="#A9793C"
-                strokeWidth="0.6"
-                fill="none"
-              />
-              <path
-                d="M140 155C152 148 162 152 164 160"
-                stroke="#A9793C"
-                strokeWidth="0.6"
-                fill="none"
-              />
-              {/* Sparkle accent */}
-              <path
-                d="M140 95L141.5 100L147 102L141.5 104L140 109L138.5 104L133 102L138.5 100L140 95Z"
-                fill="#C8A66B"
-              />
-              {/* Small dots */}
-              <circle cx="140" cy="340" r="2" fill="#C8A66B" />
-            </svg>
+            </div>
           </div>
         </ScrollReveal>
       </div>
