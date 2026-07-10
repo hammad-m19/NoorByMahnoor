@@ -5,6 +5,7 @@ import { OrderProvider } from "@/context/OrderContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/layout/CartDrawer";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Noor by Mahnoor — Luxury Artisan Perfumes",
@@ -43,6 +44,7 @@ export default function RootLayout({
             <CartDrawer />
             <main className="flex-1">{children}</main>
             <Footer />
+            <WhatsAppButton />
           </OrderProvider>
         </CartProvider>
       </body>
