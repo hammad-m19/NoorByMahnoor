@@ -36,7 +36,7 @@ export default function FeaturedFragrances() {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {products.map((product, i) => (
+          {products.slice(0, 2).map((product, i) => (
             <ScrollReveal key={product.id} delay={i * 0.15}>
               <Link href={`/product/${product.slug}`} className="group block">
                 <motion.div

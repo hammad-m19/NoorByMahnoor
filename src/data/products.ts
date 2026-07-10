@@ -64,6 +64,72 @@ export const products: Product[] = [
     size: "50ml Eau de Parfum",
     inStock: true,
   },
+  {
+    id: "03",
+    slug: "noor-duo-combo",
+    name: "Noor Duo Combo",
+    tagline: "The Complete Collection",
+    price: 6000,
+    currency: "PKR",
+    scentFamily: "Oriental & Floral",
+    notes: {
+      top: ["Saffron", "Bergamot", "Peony", "Lychee"],
+      heart: ["Rose Absolute", "Oud", "Damask Rose", "Peach Blossom"],
+      base: ["Amber", "Sandalwood", "White Musk", "Cedarwood"],
+    },
+    images: ["/images/combo-deal-1.png"],
+    description:
+      "Why choose one when you can have both? The Noor Duo Combo brings together Midnight Blue and Pink Passion — two fragrances that complement each other perfectly. Midnight Blue for evenings that demand depth and mystery, Pink Passion for days that call for grace and warmth. A curated pair at a special price, perfect as a gift or to build your own signature collection.",
+    ingredients:
+      "Includes both full-size bottles: Midnight Blue (50ml EDP) and Pink Passion (50ml EDP). See individual product pages for full ingredient lists.",
+    longevity: "6–12 hours. Varies by fragrance — see individual products for details.",
+    size: "2 × 50ml Eau de Parfum",
+    inStock: true,
+  },
+  {
+    id: "04",
+    slug: "pink-passion-tester",
+    name: "Pink Passion Tester",
+    tagline: "A Pocket of Petals",
+    price: 1000,
+    currency: "PKR",
+    scentFamily: "Floral",
+    notes: {
+      top: ["Peony", "Lychee", "Dewy Greens"],
+      heart: ["Damask Rose", "Peach Blossom", "Lily of the Valley"],
+      base: ["White Musk", "Cedarwood", "Ambrette Seed"],
+    },
+    images: ["/images/tester-pink-1.png"],
+    description:
+      "Experience the enchanting world of Pink Passion in a beautifully crafted travel-size tester. This 10ml miniature captures the same delicate harmony of peony, Damask rose, and white musk — perfect for trying before committing to the full size, or for keeping in your handbag for touch-ups throughout the day.",
+    ingredients:
+      "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Linalool, Citronellol, Geraniol, Hydroxycitronellal, Benzyl Salicylate, Limonene.",
+    longevity: "4–6 hours. Light sillage. Ideal for daytime wear and on-the-go freshness.",
+    size: "10ml Eau de Parfum Tester",
+    inStock: true,
+  },
+  {
+    id: "05",
+    slug: "midnight-blue-tester",
+    name: "Midnight Blue Tester",
+    tagline: "A Glimpse of Twilight",
+    price: 1000,
+    currency: "PKR",
+    scentFamily: "Oriental Amber",
+    notes: {
+      top: ["Saffron", "Bergamot", "Pink Pepper"],
+      heart: ["Rose Absolute", "Oud", "Jasmine Sambac"],
+      base: ["Amber", "Sandalwood", "Vanilla", "Musk"],
+    },
+    images: ["/images/tester-blue-1.png"],
+    description:
+      "Discover the depth of Midnight Blue in a pocket-sized 10ml tester. This miniature carries the same rich blend of saffron, oud, and amber that defines the full-size fragrance — perfect for sampling the scent, gifting to someone special, or keeping one in every bag for those spontaneous evening moments.",
+    ingredients:
+      "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Linalool, Coumarin, Citronellol, Geraniol, Eugenol, Alpha-Isomethyl Ionone, Benzyl Benzoate.",
+    longevity: "4–6 hours. Light to moderate sillage. Great for trying the scent before going full-size.",
+    size: "10ml Eau de Parfum Tester",
+    inStock: true,
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
