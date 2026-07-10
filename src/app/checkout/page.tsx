@@ -27,44 +27,44 @@ const PAYMENT_METHODS: {
   description: string;
   icon: React.ReactNode;
 }[] = [
-  {
-    value: "cod",
-    label: "Cash on Delivery",
-    description: "Pay when your order arrives at your doorstep",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-        <line x1="1" y1="10" x2="23" y2="10" />
-      </svg>
-    ),
-  },
-  {
-    value: "bank_transfer",
-    label: "Bank Transfer",
-    description: "Transfer to our bank account and upload receipt",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
-      </svg>
-    ),
-  },
-  {
-    value: "jazzcash_easypaisa",
-    label: "JazzCash / EasyPaisa",
-    description: "Send payment via mobile wallet",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-        <line x1="12" y1="18" x2="12.01" y2="18" />
-      </svg>
-    ),
-  },
-];
+    {
+      value: "cod",
+      label: "Cash on Delivery",
+      description: "Pay when your order arrives at your doorstep",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+          <line x1="1" y1="10" x2="23" y2="10" />
+        </svg>
+      ),
+    },
+    {
+      value: "bank_transfer",
+      label: "Bank Transfer",
+      description: "Transfer to our bank account and upload receipt",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
+        </svg>
+      ),
+    },
+    {
+      value: "jazzcash_easypaisa",
+      label: "JazzCash / EasyPaisa",
+      description: "Send payment via mobile wallet",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+          <line x1="12" y1="18" x2="12.01" y2="18" />
+        </svg>
+      ),
+    },
+  ];
 
 // --- Step components ---
 
 function StepIndicator({ currentStep }: { currentStep: number }) {
-  const steps = ["Shipping", "Payment", "Review"];
+  const steps = ["Delivery", "Payment", "Review"];
   return (
     <div className="flex items-center justify-center gap-2 mb-10">
       {steps.map((label, i) => {
@@ -80,13 +80,12 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
                   background: isActive
                     ? "var(--color-gold)"
                     : isCompleted
-                    ? "var(--color-gold-deep)"
-                    : "transparent",
-                  border: `1.5px solid ${
-                    isActive || isCompleted
-                      ? "var(--color-gold)"
-                      : "rgba(169, 121, 60, 0.3)"
-                  }`,
+                      ? "var(--color-gold-deep)"
+                      : "transparent",
+                  border: `1.5px solid ${isActive || isCompleted
+                    ? "var(--color-gold)"
+                    : "rgba(169, 121, 60, 0.3)"
+                    }`,
                   color:
                     isActive || isCompleted
                       ? "var(--color-text-light)"
@@ -154,9 +153,8 @@ function ShippingForm({
 }) {
   const inputStyle = (field: string) => ({
     background: "transparent",
-    border: `1px solid ${
-      errors[field] ? "var(--color-accent-burgundy)" : "rgba(169, 121, 60, 0.25)"
-    }`,
+    border: `1px solid ${errors[field] ? "var(--color-accent-burgundy)" : "rgba(169, 121, 60, 0.25)"
+      }`,
     color: "var(--color-text-primary)",
     fontFamily: "var(--font-sans)",
     outline: "none",
@@ -174,7 +172,7 @@ function ShippingForm({
         className="heading-serif text-2xl mb-6"
         style={{ color: "var(--color-text-primary)" }}
       >
-        Shipping Information
+        Delivery Information
       </h2>
       <div className="space-y-4">
         {/* Full Name */}
@@ -219,7 +217,7 @@ function ShippingForm({
               onChange={(e) => onChange("phone", e.target.value)}
               className="w-full px-4 py-3 text-sm"
               style={inputStyle("phone")}
-              placeholder="03XX-XXXXXXX"
+              placeholder="0333 4234282"
             />
             {errors.phone && (
               <p className="text-xs mt-1" style={{ color: "var(--color-accent-burgundy)" }}>
@@ -430,392 +428,391 @@ function PaymentStep({
 
       <div className="space-y-3 mb-6">
         {PAYMENT_METHODS.map((method) => (
-          <button
-            key={method.value}
-            onClick={() => onSelect(method.value)}
-            className="w-full text-left p-4 transition-all duration-300"
-            style={{
-              background:
-                selected === method.value
-                  ? "rgba(169, 121, 60, 0.08)"
-                  : "transparent",
-              border: `1.5px solid ${
-                selected === method.value
+          <div key={method.value} className="space-y-3">
+            <button
+              onClick={() => onSelect(method.value)}
+              className="w-full text-left p-4 transition-all duration-300"
+              style={{
+                background:
+                  selected === method.value
+                    ? "rgba(169, 121, 60, 0.08)"
+                    : "transparent",
+                border: `1.5px solid ${selected === method.value
                   ? "var(--color-gold)"
                   : "rgba(169, 121, 60, 0.2)"
-              }`,
-            }}
-          >
-            <div className="flex items-center gap-3">
-              {/* Radio indicator */}
-              <div
-                className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300"
-                style={{
-                  border: `2px solid ${
-                    selected === method.value
+                  }`,
+              }}
+            >
+              <div className="flex items-center gap-3">
+                {/* Radio indicator */}
+                <div
+                  className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300"
+                  style={{
+                    border: `2px solid ${selected === method.value
                       ? "var(--color-gold)"
                       : "rgba(169, 121, 60, 0.3)"
-                  }`,
-                }}
-              >
-                {selected === method.value && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="w-2.5 h-2.5 rounded-full"
-                    style={{ background: "var(--color-gold)" }}
-                  />
-                )}
-              </div>
-              <span
-                style={{ color: "var(--color-gold)" }}
-                className="flex-shrink-0"
-              >
-                {method.icon}
-              </span>
-              <div>
-                <span
-                  className="text-sm font-medium block"
-                  style={{
-                    fontFamily: "var(--font-sans)",
-                    color: "var(--color-text-primary)",
+                      }`,
                   }}
                 >
-                  {method.label}
-                </span>
+                  {selected === method.value && (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="w-2.5 h-2.5 rounded-full"
+                      style={{ background: "var(--color-gold)" }}
+                    />
+                  )}
+                </div>
                 <span
-                  className="text-xs"
-                  style={{
-                    fontFamily: "var(--font-sans)",
-                    color: "var(--color-text-secondary)",
-                  }}
+                  style={{ color: "var(--color-gold)" }}
+                  className="flex-shrink-0"
                 >
-                  {method.description}
+                  {method.icon}
                 </span>
+                <div>
+                  <span
+                    className="text-sm font-medium block"
+                    style={{
+                      fontFamily: "var(--font-sans)",
+                      color: "var(--color-text-primary)",
+                    }}
+                  >
+                    {method.label}
+                  </span>
+                  <span
+                    className="text-xs"
+                    style={{
+                      fontFamily: "var(--font-sans)",
+                      color: "var(--color-text-secondary)",
+                    }}
+                  >
+                    {method.description}
+                  </span>
+                </div>
               </div>
-            </div>
-          </button>
+            </button>
+
+            {/* Inline Payment Details Panel */}
+            <AnimatePresence mode="wait">
+              {selected === method.value && method.value === "bank_transfer" && (
+                <motion.div
+                  key="bank"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div
+                    className="p-5 mb-2"
+                    style={{
+                      background: "rgba(169, 121, 60, 0.06)",
+                      border: "1px solid rgba(169, 121, 60, 0.15)",
+                    }}
+                  >
+                    <h4
+                      className="text-small-caps mb-4"
+                      style={{ color: "var(--color-gold)" }}
+                    >
+                      Bank Account Details
+                    </h4>
+                    <div className="space-y-2">
+                      {[
+                        { label: "Bank Name", value: "Your Bank Name" },
+                        { label: "Account Title", value: "Noor by Mahnoor" },
+                        { label: "Account / IBAN", value: "PK00XXXX0000000000000000" },
+                      ].map((item) => (
+                        <div
+                          key={item.label}
+                          className="flex justify-between text-sm"
+                          style={{ fontFamily: "var(--font-sans)" }}
+                        >
+                          <span style={{ color: "var(--color-text-secondary)" }}>
+                            {item.label}
+                          </span>
+                          <span
+                            className="font-medium"
+                            style={{ color: "var(--color-text-primary)" }}
+                          >
+                            {item.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <p
+                      className="text-xs mt-4 italic"
+                      style={{
+                        color: "var(--color-text-secondary)",
+                        fontFamily: "var(--font-sans)",
+                      }}
+                    >
+                      Please transfer the exact amount and upload the screenshot below.
+                    </p>
+
+                    {/* Screenshot Upload */}
+                    <div className="mt-4">
+                      <label
+                        className="text-small-caps block mb-2"
+                        style={{
+                          color: "var(--color-text-primary)",
+                          fontSize: "0.65rem",
+                        }}
+                      >
+                        Upload Payment Screenshot
+                      </label>
+                      <div
+                        className="relative p-4 text-center cursor-pointer transition-all duration-300 hover:border-opacity-60"
+                        style={{
+                          border: "1.5px dashed rgba(169, 121, 60, 0.3)",
+                          background: "rgba(169, 121, 60, 0.03)",
+                        }}
+                      >
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleFileUpload}
+                          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                        />
+                        {screenshot ? (
+                          <div className="flex items-center justify-center gap-2">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              style={{ color: "var(--color-accent-forest)" }}
+                            >
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span
+                              className="text-sm"
+                              style={{
+                                color: "var(--color-accent-forest)",
+                                fontFamily: "var(--font-sans)",
+                              }}
+                            >
+                              Screenshot uploaded
+                            </span>
+                          </div>
+                        ) : (
+                          <div>
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              className="mx-auto mb-2"
+                              style={{ color: "var(--color-text-secondary)" }}
+                            >
+                              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                              <polyline points="17 8 12 3 7 8" />
+                              <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                            <span
+                              className="text-xs"
+                              style={{
+                                color: "var(--color-text-secondary)",
+                                fontFamily: "var(--font-sans)",
+                              }}
+                            >
+                              Click or drag to upload (max 5MB)
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {selected === method.value && method.value === "jazzcash_easypaisa" && (
+                <motion.div
+                  key="mobile"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div
+                    className="p-5 mb-2"
+                    style={{
+                      background: "rgba(169, 121, 60, 0.06)",
+                      border: "1px solid rgba(169, 121, 60, 0.15)",
+                    }}
+                  >
+                    <h4
+                      className="text-small-caps mb-4"
+                      style={{ color: "var(--color-gold)" }}
+                    >
+                      Mobile Wallet Details
+                    </h4>
+                    <div className="space-y-2">
+                      {[
+                        { label: "Account Name", value: "Noor by Mahnoor" },
+                        { label: "JazzCash / EasyPaisa", value: "0333 4234282" },
+                      ].map((item) => (
+                        <div
+                          key={item.label}
+                          className="flex justify-between text-sm"
+                          style={{ fontFamily: "var(--font-sans)" }}
+                        >
+                          <span style={{ color: "var(--color-text-secondary)" }}>
+                            {item.label}
+                          </span>
+                          <span
+                            className="font-medium"
+                            style={{ color: "var(--color-text-primary)" }}
+                          >
+                            {item.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <p
+                      className="text-xs mt-4 italic"
+                      style={{
+                        color: "var(--color-text-secondary)",
+                        fontFamily: "var(--font-sans)",
+                      }}
+                    >
+                      Send the exact amount and upload the screenshot below.
+                    </p>
+
+                    {/* Screenshot Upload */}
+                    <div className="mt-4">
+                      <label
+                        className="text-small-caps block mb-2"
+                        style={{
+                          color: "var(--color-text-primary)",
+                          fontSize: "0.65rem",
+                        }}
+                      >
+                        Upload Payment Screenshot
+                      </label>
+                      <div
+                        className="relative p-4 text-center cursor-pointer transition-all duration-300"
+                        style={{
+                          border: "1.5px dashed rgba(169, 121, 60, 0.3)",
+                          background: "rgba(169, 121, 60, 0.03)",
+                        }}
+                      >
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleFileUpload}
+                          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                        />
+                        {screenshot ? (
+                          <div className="flex items-center justify-center gap-2">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              style={{ color: "var(--color-accent-forest)" }}
+                            >
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span
+                              className="text-sm"
+                              style={{
+                                color: "var(--color-accent-forest)",
+                                fontFamily: "var(--font-sans)",
+                              }}
+                            >
+                              Screenshot uploaded
+                            </span>
+                          </div>
+                        ) : (
+                          <div>
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              className="mx-auto mb-2"
+                              style={{ color: "var(--color-text-secondary)" }}
+                            >
+                              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                              <polyline points="17 8 12 3 7 8" />
+                              <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                            <span
+                              className="text-xs"
+                              style={{
+                                color: "var(--color-text-secondary)",
+                                fontFamily: "var(--font-sans)",
+                              }}
+                            >
+                              Click or drag to upload (max 5MB)
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {selected === method.value && method.value === "cod" && (
+                <motion.div
+                  key="cod"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div
+                    className="p-5 mb-2"
+                    style={{
+                      background: "rgba(169, 121, 60, 0.06)",
+                      border: "1px solid rgba(169, 121, 60, 0.15)",
+                    }}
+                  >
+                    <div className="flex items-start gap-3">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        className="mt-0.5 flex-shrink-0"
+                        style={{ color: "var(--color-gold)" }}
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                      </svg>
+                      <p
+                        className="text-sm"
+                        style={{
+                          color: "var(--color-text-secondary)",
+                          fontFamily: "var(--font-sans)",
+                          lineHeight: 1.6,
+                        }}
+                      >
+                        Pay in cash when your order is delivered. Please keep the exact
+                        amount ready for the delivery rider.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         ))}
       </div>
-
-      {/* Payment Details Panel */}
-      <AnimatePresence mode="wait">
-        {selected === "bank_transfer" && (
-          <motion.div
-            key="bank"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <div
-              className="p-5 mb-6"
-              style={{
-                background: "rgba(169, 121, 60, 0.06)",
-                border: "1px solid rgba(169, 121, 60, 0.15)",
-              }}
-            >
-              <h4
-                className="text-small-caps mb-4"
-                style={{ color: "var(--color-gold)" }}
-              >
-                Bank Account Details
-              </h4>
-              <div className="space-y-2">
-                {[
-                  { label: "Bank Name", value: "Your Bank Name" },
-                  { label: "Account Title", value: "Noor by Mahnoor" },
-                  { label: "Account / IBAN", value: "PK00XXXX0000000000000000" },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex justify-between text-sm"
-                    style={{ fontFamily: "var(--font-sans)" }}
-                  >
-                    <span style={{ color: "var(--color-text-secondary)" }}>
-                      {item.label}
-                    </span>
-                    <span
-                      className="font-medium"
-                      style={{ color: "var(--color-text-primary)" }}
-                    >
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p
-                className="text-xs mt-4 italic"
-                style={{
-                  color: "var(--color-text-secondary)",
-                  fontFamily: "var(--font-sans)",
-                }}
-              >
-                Please transfer the exact amount and upload the screenshot below.
-              </p>
-
-              {/* Screenshot Upload */}
-              <div className="mt-4">
-                <label
-                  className="text-small-caps block mb-2"
-                  style={{
-                    color: "var(--color-text-primary)",
-                    fontSize: "0.65rem",
-                  }}
-                >
-                  Upload Payment Screenshot
-                </label>
-                <div
-                  className="relative p-4 text-center cursor-pointer transition-all duration-300 hover:border-opacity-60"
-                  style={{
-                    border: "1.5px dashed rgba(169, 121, 60, 0.3)",
-                    background: "rgba(169, 121, 60, 0.03)",
-                  }}
-                >
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileUpload}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                  />
-                  {screenshot ? (
-                    <div className="flex items-center justify-center gap-2">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        style={{ color: "var(--color-accent-forest)" }}
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      <span
-                        className="text-sm"
-                        style={{
-                          color: "var(--color-accent-forest)",
-                          fontFamily: "var(--font-sans)",
-                        }}
-                      >
-                        Screenshot uploaded
-                      </span>
-                    </div>
-                  ) : (
-                    <div>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        className="mx-auto mb-2"
-                        style={{ color: "var(--color-text-secondary)" }}
-                      >
-                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                        <polyline points="17 8 12 3 7 8" />
-                        <line x1="12" y1="3" x2="12" y2="15" />
-                      </svg>
-                      <span
-                        className="text-xs"
-                        style={{
-                          color: "var(--color-text-secondary)",
-                          fontFamily: "var(--font-sans)",
-                        }}
-                      >
-                        Click or drag to upload (max 5MB)
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {selected === "jazzcash_easypaisa" && (
-          <motion.div
-            key="mobile"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <div
-              className="p-5 mb-6"
-              style={{
-                background: "rgba(169, 121, 60, 0.06)",
-                border: "1px solid rgba(169, 121, 60, 0.15)",
-              }}
-            >
-              <h4
-                className="text-small-caps mb-4"
-                style={{ color: "var(--color-gold)" }}
-              >
-                Mobile Wallet Details
-              </h4>
-              <div className="space-y-2">
-                {[
-                  { label: "Account Name", value: "Noor by Mahnoor" },
-                  { label: "JazzCash / EasyPaisa", value: "03XX-XXXXXXX" },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex justify-between text-sm"
-                    style={{ fontFamily: "var(--font-sans)" }}
-                  >
-                    <span style={{ color: "var(--color-text-secondary)" }}>
-                      {item.label}
-                    </span>
-                    <span
-                      className="font-medium"
-                      style={{ color: "var(--color-text-primary)" }}
-                    >
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p
-                className="text-xs mt-4 italic"
-                style={{
-                  color: "var(--color-text-secondary)",
-                  fontFamily: "var(--font-sans)",
-                }}
-              >
-                Send the exact amount and upload the screenshot below.
-              </p>
-
-              {/* Screenshot Upload */}
-              <div className="mt-4">
-                <label
-                  className="text-small-caps block mb-2"
-                  style={{
-                    color: "var(--color-text-primary)",
-                    fontSize: "0.65rem",
-                  }}
-                >
-                  Upload Payment Screenshot
-                </label>
-                <div
-                  className="relative p-4 text-center cursor-pointer transition-all duration-300"
-                  style={{
-                    border: "1.5px dashed rgba(169, 121, 60, 0.3)",
-                    background: "rgba(169, 121, 60, 0.03)",
-                  }}
-                >
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileUpload}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                  />
-                  {screenshot ? (
-                    <div className="flex items-center justify-center gap-2">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        style={{ color: "var(--color-accent-forest)" }}
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      <span
-                        className="text-sm"
-                        style={{
-                          color: "var(--color-accent-forest)",
-                          fontFamily: "var(--font-sans)",
-                        }}
-                      >
-                        Screenshot uploaded
-                      </span>
-                    </div>
-                  ) : (
-                    <div>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        className="mx-auto mb-2"
-                        style={{ color: "var(--color-text-secondary)" }}
-                      >
-                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                        <polyline points="17 8 12 3 7 8" />
-                        <line x1="12" y1="3" x2="12" y2="15" />
-                      </svg>
-                      <span
-                        className="text-xs"
-                        style={{
-                          color: "var(--color-text-secondary)",
-                          fontFamily: "var(--font-sans)",
-                        }}
-                      >
-                        Click or drag to upload (max 5MB)
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {selected === "cod" && (
-          <motion.div
-            key="cod"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <div
-              className="p-5 mb-6"
-              style={{
-                background: "rgba(169, 121, 60, 0.06)",
-                border: "1px solid rgba(169, 121, 60, 0.15)",
-              }}
-            >
-              <div className="flex items-start gap-3">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="mt-0.5 flex-shrink-0"
-                  style={{ color: "var(--color-gold)" }}
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <line x1="12" y1="16" x2="12" y2="12" />
-                  <line x1="12" y1="8" x2="12.01" y2="8" />
-                </svg>
-                <p
-                  className="text-sm"
-                  style={{
-                    color: "var(--color-text-secondary)",
-                    fontFamily: "var(--font-sans)",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  Pay in cash when your order is delivered. Please keep the exact
-                  amount ready for the delivery rider.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Navigation */}
       <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -956,7 +953,7 @@ function ReviewStep({
           className="text-small-caps mb-3"
           style={{ color: "var(--color-gold)", fontSize: "0.65rem" }}
         >
-          Shipping To
+          Delivery To
         </h4>
         <div
           className="text-sm space-y-1"
@@ -1015,7 +1012,7 @@ function ReviewStep({
           </div>
           <div className="flex justify-between">
             <span style={{ color: "var(--color-text-secondary)" }}>
-              Shipping
+              Delivery
             </span>
             <span
               style={{
@@ -1513,7 +1510,7 @@ export default function CheckoutPage() {
                         style={{ fontFamily: "var(--font-sans)" }}
                       >
                         <span style={{ color: "var(--color-text-secondary)" }}>
-                          Shipping
+                          Delivery
                         </span>
                         <span
                           style={{
@@ -1558,7 +1555,7 @@ export default function CheckoutPage() {
                           fontWeight: 500,
                         }}
                       >
-                        ✓ Free shipping applied
+                        ✓ Free delivery applied
                       </div>
                     )}
 
@@ -1569,7 +1566,7 @@ export default function CheckoutPage() {
                         fontFamily: "var(--font-sans)",
                       }}
                     >
-                      Secure checkout · Free shipping over Rs. 8,000
+                      Secure checkout · Free delivery over Rs. 8,000
                     </p>
                   </div>
                 </ScrollReveal>

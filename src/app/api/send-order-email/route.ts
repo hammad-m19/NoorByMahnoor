@@ -49,7 +49,7 @@ ${itemsList}
 
 ────────── ORDER TOTAL ──────────
 Subtotal:  Rs. ${order.subtotal.toLocaleString("en-PK")}
-Shipping:  ${order.shippingCost === 0 ? "FREE" : `Rs. ${order.shippingCost.toLocaleString("en-PK")}`}
+Delivery:  ${order.shippingCost === 0 ? "FREE" : `Rs. ${order.shippingCost.toLocaleString("en-PK")}`}
 TOTAL:     Rs. ${order.total.toLocaleString("en-PK")}
 
 ────────── PAYMENT ──────────

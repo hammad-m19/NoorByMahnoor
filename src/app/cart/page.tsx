@@ -250,7 +250,7 @@ export default function CartPage() {
                         </span>
                       </div>
                       <div className="flex justify-between text-sm" style={{ fontFamily: "var(--font-sans)" }}>
-                        <span style={{ color: "var(--color-text-secondary)" }}>Shipping</span>
+                        <span style={{ color: "var(--color-text-secondary)" }}>Delivery</span>
                         <span
                           className="text-xs"
                           style={{
@@ -298,7 +298,7 @@ export default function CartPage() {
                         fontFamily: "var(--font-sans)",
                       }}
                     >
-                      Secure checkout · Free shipping over Rs. 8,000
+                      Secure checkout · Free delivery over Rs. 8,000
                     </p>
 
                     <div className="mt-6 text-center">

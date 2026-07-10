@@ -212,7 +212,7 @@ export default function CartDrawer() {
                   className="text-xs mb-4 text-center"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
-                  Shipping calculated at checkout
+                  Delivery calculated at checkout
                 </p>
                 <Link
                   href="/cart"
