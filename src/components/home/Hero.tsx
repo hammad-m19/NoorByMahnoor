@@ -13,7 +13,7 @@ export default function Hero() {
           src="/images/hero.png"
           alt="Noor by Mahnoor luxury fragrance collection"
           fill
-          className="object-cover"
+          className="object-cover object-left md:object-center"
           priority
           fetchPriority="high"
           sizes="100vw"

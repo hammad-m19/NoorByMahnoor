@@ -71,7 +71,7 @@ export default function Footer() {
                 lineHeight: 1.7,
               }}
             >
-              Crafting fragrances that capture moments of light — from the golden glow of dusk to the delicate bloom of dawn.
+              Crafting fragrances that capture moments of light from the golden glow of dusk to the delicate bloom of dawn.
             </p>
           </div>
 
