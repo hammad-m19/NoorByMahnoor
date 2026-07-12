@@ -81,7 +81,7 @@ export default function FeaturedFragrances() {
                           color: "var(--color-gold)",
                         }}
                       >
-                        {product.scentFamily}
+                        {product.category}
                       </span>
                     </div>
                   </div>

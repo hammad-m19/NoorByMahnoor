@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { products, getScentFamilies } from "@/data/products";
+import { products, getCategories } from "@/data/products";
 import { formatPrice } from "@/lib/utils";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionDivider from "@/components/ui/SectionDivider";
@@ -12,16 +12,16 @@ import SectionDivider from "@/components/ui/SectionDivider";
 type SortOption = "default" | "price-asc" | "price-desc";
 
 export default function ShopPage() {
-  const [selectedFamily, setSelectedFamily] = useState<string>("All");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [sortBy, setSortBy] = useState<SortOption>("default");
 
-  const scentFamilies = useMemo(() => ["All", ...getScentFamilies()], []);
+  const categories = useMemo(() => ["All", ...getCategories()], []);
 
   const filteredProducts = useMemo(() => {
     let filtered = [...products];
 
-    if (selectedFamily !== "All") {
-      filtered = filtered.filter((p) => p.scentFamily === selectedFamily);
+    if (selectedCategory !== "All") {
+      filtered = filtered.filter((p) => p.category === selectedCategory);
     }
 
     switch (sortBy) {
@@ -34,7 +34,7 @@ export default function ShopPage() {
     }
 
     return filtered;
-  }, [selectedFamily, sortBy]);
+  }, [selectedCategory, sortBy]);
 
   return (
     <div style={{ background: "var(--color-bg-primary)" }}>
@@ -65,29 +65,29 @@ export default function ShopPage() {
         >
           {/* Filter Pills */}
           <div className="flex items-center gap-2 flex-wrap justify-center">
-            {scentFamilies.map((family) => (
+            {categories.map((category) => (
               <button
-                key={family}
-                onClick={() => setSelectedFamily(family)}
+                key={category}
+                onClick={() => setSelectedCategory(category)}
                 className="text-small-caps px-4 py-2 transition-all duration-300"
                 style={{
                   fontSize: "0.65rem",
                   background:
-                    selectedFamily === family
+                    selectedCategory === category
                       ? "var(--color-gold)"
                       : "transparent",
                   color:
-                    selectedFamily === family
+                    selectedCategory === category
                       ? "var(--color-bg-primary)"
                       : "var(--color-text-secondary)",
                   border: `1px solid ${
-                    selectedFamily === family
+                    selectedCategory === category
                       ? "var(--color-gold)"
                       : "rgba(169, 121, 60, 0.25)"
                   }`,
                 }}
               >
-                {family}
+                {category}
               </button>
             ))}
           </div>
@@ -173,7 +173,7 @@ export default function ShopPage() {
                           color: "var(--color-gold)",
                         }}
                       >
-                        {product.scentFamily}
+                        {product.category}
                       </span>
                     </div>
                   </div>

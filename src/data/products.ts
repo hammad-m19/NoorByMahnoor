@@ -5,7 +5,7 @@ export interface Product {
   tagline: string;
   price: number;
   currency: string;
-  scentFamily: string;
+  category: string;
   notes: {
     top: string[];
     heart: string[];
@@ -27,7 +27,7 @@ export const products: Product[] = [
     tagline: "An Evening Reverie",
     price: 3500,
     currency: "PKR",
-    scentFamily: "Oriental Amber",
+    category: "Male",
     notes: {
       top: ["Saffron", "Bergamot", "Pink Pepper"],
       heart: ["Rose Absolute", "Oud", "Jasmine Sambac"],
@@ -49,7 +49,7 @@ export const products: Product[] = [
     tagline: "A Garden at Dawn",
     price: 3500,
     currency: "PKR",
-    scentFamily: "Floral",
+    category: "Female",
     notes: {
       top: ["Peony", "Lychee", "Dewy Greens"],
       heart: ["Damask Rose", "Peach Blossom", "Lily of the Valley"],
@@ -71,7 +71,7 @@ export const products: Product[] = [
     tagline: "The Complete Collection",
     price: 6000,
     currency: "PKR",
-    scentFamily: "Oriental & Floral",
+    category: "Unisex",
     notes: {
       top: ["Saffron", "Bergamot", "Peony", "Lychee"],
       heart: ["Rose Absolute", "Oud", "Damask Rose", "Peach Blossom"],
@@ -93,7 +93,7 @@ export const products: Product[] = [
     tagline: "A Pocket of Petals",
     price: 1000,
     currency: "PKR",
-    scentFamily: "Floral",
+    category: "Female",
     notes: {
       top: ["Peony", "Lychee", "Dewy Greens"],
       heart: ["Damask Rose", "Peach Blossom", "Lily of the Valley"],
@@ -115,7 +115,7 @@ export const products: Product[] = [
     tagline: "A Glimpse of Twilight",
     price: 1000,
     currency: "PKR",
-    scentFamily: "Oriental Amber",
+    category: "Male",
     notes: {
       top: ["Saffron", "Bergamot", "Pink Pepper"],
       heart: ["Rose Absolute", "Oud", "Jasmine Sambac"],
@@ -140,7 +140,7 @@ export function getOtherProducts(currentSlug: string): Product[] {
   return products.filter((p) => p.slug !== currentSlug);
 }
 
-export function getScentFamilies(): string[] {
-  const families = new Set(products.map((p) => p.scentFamily));
-  return Array.from(families);
+export function getCategories(): string[] {
+  const categories = new Set(products.map((p) => p.category));
+  return Array.from(categories);
 }

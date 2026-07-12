@@ -133,7 +133,7 @@ function ProductDetail({ slug }: { slug: string }) {
                 className="text-small-caps inline-block mb-4"
                 style={{ color: "var(--color-gold)", fontSize: "0.65rem" }}
               >
-                {product.scentFamily}
+                {product.category}
               </span>
 
               {/* Name */}
