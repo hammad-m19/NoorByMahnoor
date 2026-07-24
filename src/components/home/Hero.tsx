@@ -46,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-          className="mb-6"
+          className="mb-6 hidden md:block"
         >
           <svg
             width="24"
@@ -68,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="mb-4"
+          className="mb-4 hidden md:block"
         >
           <h1
             className="heading-display text-5xl md:text-7xl lg:text-8xl tracking-[0.3em]"
@@ -97,7 +97,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="heading-serif text-lg md:text-xl lg:text-2xl max-w-lg mb-10 italic"
+          className="heading-serif text-lg md:text-xl lg:text-2xl max-w-lg mb-10 italic hidden md:block"
           style={{ color: "var(--color-text-secondary)" }}
         >
           Luxury in Every Drop
@@ -108,6 +108,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mt-auto mb-16 md:mt-0 md:mb-0"
         >
           <Link href="/shop" className="btn-primary">
             Discover the Collection
