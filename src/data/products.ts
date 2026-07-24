@@ -33,7 +33,12 @@ export const products: Product[] = [
       heart: ["Rose Absolute", "Oud", "Jasmine Sambac"],
       base: ["Amber", "Sandalwood", "Vanilla", "Musk"],
     },
-    images: ["/images/perfume1-1.png", "/images/perfume1-2.png"],
+    images: [
+      "/images/perfume1-1.png",
+      "/images/perfume1-2.png",
+      "/images/perfume1-3.png",
+      "/images/perfume1-4.png",
+    ],
     description:
       "Midnight Blue captures the magic of dusk — that luminous moment when the sky glows amber and the first stars appear. A rich, warm blend of saffron and oud, softened by rose and wrapped in a base of creamy sandalwood and amber. This is a fragrance for evenings that linger, for conversations that matter, for the quiet confidence of twilight.",
     ingredients:
@@ -55,7 +60,12 @@ export const products: Product[] = [
       heart: ["Damask Rose", "Peach Blossom", "Lily of the Valley"],
       base: ["White Musk", "Cedarwood", "Ambrette Seed"],
     },
-    images: ["/images/perfume2-1.png", "/images/perfume2-2.png"],
+    images: [
+      "/images/perfume2-1.png",
+      "/images/perfume2-2.png",
+      "/images/perfume2-3.png",
+      "/images/perfume2-4.png",
+    ],
     description:
       "Pink Passion is the scent of a rose garden kissed by the first light of morning. Delicate yet present, it opens with fresh peony and lychee, blooms into the heart of Damask rose and peach blossom, and settles into a whisper of white musk and cedarwood. A fragrance for the woman who carries grace like a second skin.",
     ingredients:
@@ -77,7 +87,7 @@ export const products: Product[] = [
       heart: ["Rose Absolute", "Oud", "Damask Rose", "Peach Blossom"],
       base: ["Amber", "Sandalwood", "White Musk", "Cedarwood"],
     },
-    images: ["/images/combo-deal-1.png"],
+    images: ["/images/combo-deal-1-1.png", "/images/combo-deal-1-2.png"],
     description:
       "Why choose one when you can have both? The Noor Duo Combo brings together Midnight Blue and Pink Passion — two fragrances that complement each other perfectly. Midnight Blue for evenings that demand depth and mystery, Pink Passion for days that call for grace and warmth. A curated pair at a special price, perfect as a gift or to build your own signature collection.",
     ingredients:

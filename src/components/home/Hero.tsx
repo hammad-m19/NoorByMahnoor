@@ -9,11 +9,22 @@ export default function Hero() {
     <section className="relative w-full overflow-hidden" style={{ height: "100vh", minHeight: "600px" }}>
       {/* Background Image */}
       <div className="absolute inset-0">
+        {/* Desktop Hero Image */}
         <Image
           src="/images/hero.png"
           alt="Noor by Mahnoor luxury fragrance collection"
           fill
-          className="object-cover object-left md:object-center"
+          className="object-cover object-left md:object-center hidden md:block"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        {/* Mobile / Phone Hero Image */}
+        <Image
+          src="/images/hero-phone.png"
+          alt="Noor by Mahnoor luxury fragrance collection"
+          fill
+          className="object-cover object-center block md:hidden"
           priority
           fetchPriority="high"
           sizes="100vw"
