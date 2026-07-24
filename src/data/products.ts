@@ -29,9 +29,9 @@ export const products: Product[] = [
     currency: "PKR",
     category: "Male",
     notes: {
-      top: ["Saffron", "Bergamot", "Pink Pepper"],
-      heart: ["Rose Absolute", "Oud", "Jasmine Sambac"],
-      base: ["Amber", "Sandalwood", "Vanilla", "Musk"],
+      top: ["Bergamot", "Lemon", "Lavender"],
+      heart: ["Jasmine", "Geranium", "Nutmeg"],
+      base: ["Amber", "Musk", "Cedarwood"],
     },
     images: [
       "/images/perfume1-1.png",
@@ -40,7 +40,7 @@ export const products: Product[] = [
       "/images/perfume1-4.png",
     ],
     description:
-      "Midnight Blue captures the magic of dusk — that luminous moment when the sky glows amber and the first stars appear. A rich, warm blend of saffron and oud, softened by rose and wrapped in a base of creamy sandalwood and amber. This is a fragrance for evenings that linger, for conversations that matter, for the quiet confidence of twilight.",
+      "Midnight Blue captures the magic of dusk — that luminous moment when the sky glows amber and the first stars appear. A rich, warm blend of bergamot, lemon, and lavender, opening into a heart of jasmine, geranium, and nutmeg, wrapped in a base of amber, musk, and cedarwood. This is a fragrance for evenings that linger, for conversations that matter, for the quiet confidence of twilight.",
     ingredients:
       "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Linalool, Coumarin, Citronellol, Geraniol, Eugenol, Alpha-Isomethyl Ionone, Benzyl Benzoate.",
     longevity: "8–12 hours. Moderate to heavy sillage. Best worn in autumn and winter evenings.",
@@ -56,9 +56,9 @@ export const products: Product[] = [
     currency: "PKR",
     category: "Female",
     notes: {
-      top: ["Peony", "Lychee", "Dewy Greens"],
-      heart: ["Damask Rose", "Peach Blossom", "Lily of the Valley"],
-      base: ["White Musk", "Cedarwood", "Ambrette Seed"],
+      top: ["Citrus", "Red Berries", "Pear"],
+      heart: ["Rose", "Peony", "Jasmine"],
+      base: ["Vanilla", "Musk", "Amber"],
     },
     images: [
       "/images/perfume2-1.png",
@@ -67,7 +67,7 @@ export const products: Product[] = [
       "/images/perfume2-4.png",
     ],
     description:
-      "Pink Passion is the scent of a rose garden kissed by the first light of morning. Delicate yet present, it opens with fresh peony and lychee, blooms into the heart of Damask rose and peach blossom, and settles into a whisper of white musk and cedarwood. A fragrance for the woman who carries grace like a second skin.",
+      "Pink Passion is the scent of a rose garden kissed by the first light of morning. Delicate yet present, it opens with fresh citrus, red berries, and pear, blooms into the heart of rose, peony, and jasmine, and settles into a warm base of vanilla, musk, and amber. A fragrance for the woman who carries grace like a second skin.",
     ingredients:
       "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Linalool, Citronellol, Geraniol, Hydroxycitronellal, Benzyl Salicylate, Limonene.",
     longevity: "6–10 hours. Light to moderate sillage. Perfect for spring and summer days.",
@@ -83,9 +83,9 @@ export const products: Product[] = [
     currency: "PKR",
     category: "Unisex",
     notes: {
-      top: ["Saffron", "Bergamot", "Peony", "Lychee"],
-      heart: ["Rose Absolute", "Oud", "Damask Rose", "Peach Blossom"],
-      base: ["Amber", "Sandalwood", "White Musk", "Cedarwood"],
+      top: ["Bergamot", "Lemon", "Lavender", "Citrus", "Red Berries", "Pear"],
+      heart: ["Jasmine", "Geranium", "Nutmeg", "Rose", "Peony"],
+      base: ["Amber", "Musk", "Cedarwood", "Vanilla"],
     },
     images: ["/images/combo-deal-1-1.png", "/images/combo-deal-1-2.png"],
     description:
@@ -105,13 +105,13 @@ export const products: Product[] = [
     currency: "PKR",
     category: "Female",
     notes: {
-      top: ["Peony", "Lychee", "Dewy Greens"],
-      heart: ["Damask Rose", "Peach Blossom", "Lily of the Valley"],
-      base: ["White Musk", "Cedarwood", "Ambrette Seed"],
+      top: ["Citrus", "Red Berries", "Pear"],
+      heart: ["Rose", "Peony", "Jasmine"],
+      base: ["Vanilla", "Musk", "Amber"],
     },
-    images: ["/images/tester-pink-1.png"],
+    images: ["/images/tester-pink-1.png", "/images/tester-pink-1-2.png"],
     description:
-      "Experience the enchanting world of Pink Passion in a beautifully crafted travel-size tester. This 10ml miniature captures the same delicate harmony of peony, Damask rose, and white musk — perfect for trying before committing to the full size, or for keeping in your handbag for touch-ups throughout the day.",
+      "Experience the enchanting world of Pink Passion in a beautifully crafted travel-size tester. This 10ml miniature captures the same delicate harmony of citrus, rose, peony, vanilla, and amber — perfect for trying before committing to the full size, or for keeping in your handbag for touch-ups throughout the day.",
     ingredients:
       "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Linalool, Citronellol, Geraniol, Hydroxycitronellal, Benzyl Salicylate, Limonene.",
     longevity: "4–6 hours. Light sillage. Ideal for daytime wear and on-the-go freshness.",
@@ -127,13 +127,13 @@ export const products: Product[] = [
     currency: "PKR",
     category: "Male",
     notes: {
-      top: ["Saffron", "Bergamot", "Pink Pepper"],
-      heart: ["Rose Absolute", "Oud", "Jasmine Sambac"],
-      base: ["Amber", "Sandalwood", "Vanilla", "Musk"],
+      top: ["Bergamot", "Lemon", "Lavender"],
+      heart: ["Jasmine", "Geranium", "Nutmeg"],
+      base: ["Amber", "Musk", "Cedarwood"],
     },
-    images: ["/images/tester-blue-1.png"],
+    images: ["/images/tester-blue-1.png", "/images/tester-blue-1-2.png"],
     description:
-      "Discover the depth of Midnight Blue in a pocket-sized 10ml tester. This miniature carries the same rich blend of saffron, oud, and amber that defines the full-size fragrance — perfect for sampling the scent, gifting to someone special, or keeping one in every bag for those spontaneous evening moments.",
+      "Discover the depth of Midnight Blue in a pocket-sized 10ml tester. This miniature carries the same rich blend of bergamot, lavender, jasmine, amber, and cedarwood that defines the full-size fragrance — perfect for sampling the scent, gifting to someone special, or keeping one in every bag for those spontaneous evening moments.",
     ingredients:
       "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Linalool, Coumarin, Citronellol, Geraniol, Eugenol, Alpha-Isomethyl Ionone, Benzyl Benzoate.",
     longevity: "4–6 hours. Light to moderate sillage. Great for trying the scent before going full-size.",
