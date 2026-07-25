@@ -96,11 +96,32 @@ ${order.paymentScreenshot ? "\n⚠️ Customer uploaded a payment screenshot (vi
       });
     }
 
+    // Build attachments array if screenshot exists
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const attachments: any[] = [];
+    if (order.paymentScreenshot && order.paymentScreenshot.startsWith("data:")) {
+      // Parse base64 data URL: "data:image/png;base64,iVBOR..."
+      const matches = order.paymentScreenshot.match(
+        /^data:image\/(\w+);base64,(.+)$/
+      );
+      if (matches) {
+        const ext = matches[1]; // png, jpeg, etc.
+        const base64Data = matches[2];
+        attachments.push({
+          filename: `payment-screenshot-${order.id}.${ext}`,
+          content: base64Data,
+          encoding: "base64",
+          contentType: `image/${ext}`,
+        });
+      }
+    }
+
     await transporter.sendMail({
       from: `"Noor by Mahnoor" <${process.env.EMAIL_USER || "noorbymahnoor.pk@gmail.com"}>`,
       to: process.env.EMAIL_USER || "noorbymahnoor.pk@gmail.com",
       subject: `🌟 New Order ${order.id} — ${order.shipping.fullName}`,
       text: emailBody,
+      attachments,
     });
 
     return Response.json({ success: true, message: "Order notification sent" });

@@ -102,8 +102,8 @@ export function OrderProvider({ children }: { children: React.ReactNode }) {
           body: JSON.stringify({
             order: {
               ...order,
-              // Don't send base64 screenshot in email body — too large
-              paymentScreenshot: paymentScreenshot ? "[Screenshot Attached]" : undefined,
+              // Send the actual base64 screenshot so it can be attached to the email
+              paymentScreenshot: paymentScreenshot || undefined,
             },
           }),
         });
