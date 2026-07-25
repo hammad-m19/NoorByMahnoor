@@ -98,7 +98,7 @@ ${order.paymentScreenshot ? "\n⚠️ Customer uploaded a payment screenshot (vi
 
     await transporter.sendMail({
       from: `"Noor by Mahnoor" <${process.env.EMAIL_USER || "noorbymahnoor.pk@gmail.com"}>`,
-      to: "noorbymahnoor.pk@gmail.com",
+      to: process.env.EMAIL_USER || "noorbymahnoor.pk@gmail.com",
       subject: `🌟 New Order ${order.id} — ${order.shipping.fullName}`,
       text: emailBody,
     });

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 
-const WHATSAPP_NUMBER = "923334234282";
+const WHATSAPP_NUMBER = "923258891727";
 const PREFILLED_MESSAGE = "Hi! I'd like to know more about your perfumes.";
 
 const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(PREFILLED_MESSAGE)}`;

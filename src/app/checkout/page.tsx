@@ -217,7 +217,7 @@ function ShippingForm({
               onChange={(e) => onChange("phone", e.target.value)}
               className="w-full px-4 py-3 text-sm"
               style={inputStyle("phone")}
-              placeholder="0333 4234282"
+              placeholder="0325 8891727"
             />
             {errors.phone && (
               <p className="text-xs mt-1" style={{ color: "var(--color-accent-burgundy)" }}>
