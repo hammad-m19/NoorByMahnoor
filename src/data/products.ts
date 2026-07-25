@@ -4,6 +4,7 @@ export interface Product {
   name: string;
   tagline: string;
   price: number;
+  originalPrice?: number;
   currency: string;
   category: string;
   notes: {
@@ -25,7 +26,8 @@ export const products: Product[] = [
     slug: "midnight-blue",
     name: "Midnight Blue",
     tagline: "An Evening Reverie",
-    price: 3500,
+    price: 3000,
+    originalPrice: 5000,
     currency: "PKR",
     category: "Male",
     notes: {
@@ -52,7 +54,8 @@ export const products: Product[] = [
     slug: "pink-passion",
     name: "Pink Passion",
     tagline: "A Garden at Dawn",
-    price: 3500,
+    price: 3000,
+    originalPrice: 5000,
     currency: "PKR",
     category: "Female",
     notes: {
@@ -80,6 +83,7 @@ export const products: Product[] = [
     name: "Noor Duo Combo",
     tagline: "The Complete Collection",
     price: 6000,
+    originalPrice: 10000,
     currency: "PKR",
     category: "Unisex",
     notes: {

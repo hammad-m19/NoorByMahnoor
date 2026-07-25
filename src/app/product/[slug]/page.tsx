@@ -152,13 +152,40 @@ function ProductDetail({ slug }: { slug: string }) {
                 {product.tagline}
               </p>
 
-              {/* Price */}
-              <p
-                className="gold-text text-2xl font-medium mb-6"
-                style={{ fontFamily: "var(--font-sans)" }}
-              >
-                {formatPrice(product.price)}
-              </p>
+              {/* Price & Discount */}
+              <div className="flex items-center gap-3 mb-6 flex-wrap">
+                {product.originalPrice && (
+                  <span
+                    className="text-lg line-through"
+                    style={{
+                      color: "var(--color-text-secondary)",
+                      fontFamily: "var(--font-sans)",
+                      textDecoration: "line-through",
+                      opacity: 0.7,
+                    }}
+                  >
+                    {formatPrice(product.originalPrice)}
+                  </span>
+                )}
+                <span
+                  className="gold-text text-2xl md:text-3xl font-semibold"
+                  style={{ fontFamily: "var(--font-sans)" }}
+                >
+                  {formatPrice(product.price)}
+                </span>
+                {product.originalPrice && (
+                  <span
+                    className="text-xs px-2.5 py-1 rounded font-medium tracking-wider uppercase"
+                    style={{
+                      background: "rgba(169, 121, 60, 0.15)",
+                      color: "var(--color-gold)",
+                      border: "1px solid rgba(169, 121, 60, 0.3)",
+                    }}
+                  >
+                    {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
+                  </span>
+                )}
+              </div>
 
               {/* Size */}
               <p
@@ -367,6 +394,20 @@ function ProductDetail({ slug }: { slug: string }) {
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           loading="lazy"
                         />
+                        {p.originalPrice && (
+                          <div className="absolute top-3 right-3 z-10">
+                            <span
+                              className="text-small-caps px-2.5 py-1 font-semibold"
+                              style={{
+                                fontSize: "0.6rem",
+                                background: "var(--color-gold)",
+                                color: "#0f172a",
+                              }}
+                            >
+                              40% OFF
+                            </span>
+                          </div>
+                        )}
                       </div>
                       <div className="p-5 text-center">
                         <h3
@@ -375,12 +416,22 @@ function ProductDetail({ slug }: { slug: string }) {
                         >
                           {p.name}
                         </h3>
-                        <p
-                          className="gold-text font-medium text-sm"
-                          style={{ fontFamily: "var(--font-sans)" }}
-                        >
-                          {formatPrice(p.price)}
-                        </p>
+                        <div className="flex items-center justify-center gap-2">
+                          {p.originalPrice && (
+                            <span
+                              className="text-xs line-through"
+                              style={{ color: "var(--color-text-secondary)", textDecoration: "line-through", opacity: 0.7 }}
+                            >
+                              {formatPrice(p.originalPrice)}
+                            </span>
+                          )}
+                          <span
+                            className="gold-text font-medium text-sm"
+                            style={{ fontFamily: "var(--font-sans)" }}
+                          >
+                            {formatPrice(p.price)}
+                          </span>
+                        </div>
                       </div>
                     </motion.div>
                   </Link>

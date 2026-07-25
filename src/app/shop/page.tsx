@@ -176,6 +176,21 @@ export default function ShopPage() {
                         {product.category}
                       </span>
                     </div>
+
+                    {product.originalPrice && (
+                      <div className="absolute top-4 right-4 z-10">
+                        <span
+                          className="text-small-caps px-2.5 py-1.5 font-semibold"
+                          style={{
+                            fontSize: "0.6rem",
+                            background: "var(--color-gold)",
+                            color: "#0f172a",
+                          }}
+                        >
+                          40% OFF
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Info */}
@@ -203,12 +218,38 @@ export default function ShopPage() {
                       · {product.notes.heart[0]}{" "}
                       · {product.notes.base[0]}
                     </p>
-                    <p
-                      className="gold-text font-medium mb-3"
-                      style={{ fontFamily: "var(--font-sans)" }}
-                    >
-                      {formatPrice(product.price)}
-                    </p>
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      {product.originalPrice && (
+                        <span
+                          className="text-xs line-through"
+                          style={{
+                            color: "var(--color-text-secondary)",
+                            fontFamily: "var(--font-sans)",
+                            textDecoration: "line-through",
+                            opacity: 0.7,
+                          }}
+                        >
+                          {formatPrice(product.originalPrice)}
+                        </span>
+                      )}
+                      <span
+                        className="gold-text font-medium"
+                        style={{ fontFamily: "var(--font-sans)" }}
+                      >
+                        {formatPrice(product.price)}
+                      </span>
+                      {product.originalPrice && (
+                        <span
+                          className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wider uppercase"
+                          style={{
+                            background: "rgba(169, 121, 60, 0.15)",
+                            color: "var(--color-gold)",
+                          }}
+                        >
+                          40% OFF
+                        </span>
+                      )}
+                    </div>
                     <span
                       className="text-small-caps inline-block relative pb-0.5"
                       style={{ color: "var(--color-gold)", fontSize: "0.65rem" }}

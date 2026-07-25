@@ -50,8 +50,8 @@ const PAYMENT_METHODS: {
     },
     {
       value: "jazzcash_easypaisa",
-      label: "JazzCash / EasyPaisa",
-      description: "Send payment via mobile wallet",
+      label: "JazzCash",
+      description: "Send payment via JazzCash mobile wallet",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
@@ -518,9 +518,9 @@ function PaymentStep({
                     </h4>
                     <div className="space-y-2">
                       {[
-                        { label: "Bank Name", value: "Your Bank Name" },
-                        { label: "Account Title", value: "Noor by Mahnoor" },
-                        { label: "Account / IBAN", value: "PK00XXXX0000000000000000" },
+                        { label: "Bank Name", value: "UBL" },
+                        { label: "Account Title", value: "Mahnoor" },
+                        { label: "Account / IBAN", value: "PK11UNIL0109000246938826" },
                       ].map((item) => (
                         <div
                           key={item.label}
@@ -649,12 +649,12 @@ function PaymentStep({
                       className="text-small-caps mb-4"
                       style={{ color: "var(--color-gold)" }}
                     >
-                      Mobile Wallet Details
+                      JazzCash Details
                     </h4>
                     <div className="space-y-2">
                       {[
                         { label: "Account Name", value: "Noor by Mahnoor" },
-                        { label: "JazzCash / EasyPaisa", value: "0333 4234282" },
+                        { label: "JazzCash Number", value: "03258891727" },
                       ].map((item) => (
                         <div
                           key={item.label}
@@ -862,7 +862,7 @@ function ReviewStep({
   const paymentLabels: Record<PaymentMethod, string> = {
     cod: "Cash on Delivery",
     bank_transfer: "Bank Transfer",
-    jazzcash_easypaisa: "JazzCash / EasyPaisa",
+    jazzcash_easypaisa: "JazzCash",
   };
 
   const total = subtotal + shippingCost;
@@ -1096,7 +1096,7 @@ function OrderConfirmation({
   const paymentLabels: Record<PaymentMethod, string> = {
     cod: "Cash on Delivery",
     bank_transfer: "Bank Transfer",
-    jazzcash_easypaisa: "JazzCash / EasyPaisa",
+    jazzcash_easypaisa: "JazzCash",
   };
 
   return (

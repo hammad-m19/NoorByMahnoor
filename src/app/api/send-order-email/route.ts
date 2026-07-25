@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     const paymentMethodLabels: Record<string, string> = {
       cod: "Cash on Delivery",
       bank_transfer: "Bank Transfer",
-      jazzcash_easypaisa: "JazzCash / EasyPaisa",
+      jazzcash_easypaisa: "JazzCash",
     };
 
     const itemsList = order.items
